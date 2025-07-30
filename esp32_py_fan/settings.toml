@@ -1,0 +1,7 @@
+#info
+WIFI_SSID = "your-wifi-ssid"
+WIFI_PASSWORD = "your-wifi-password"
+MQTT_BROKER="your-broker"
+MQTT_PORT="your-port"
+MQTT_USERNAME="your_username"
+MQTT_PASSWORD="your_key"
