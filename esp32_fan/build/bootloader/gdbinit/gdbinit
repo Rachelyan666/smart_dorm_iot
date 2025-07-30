@@ -1,0 +1,2 @@
+source /Users/rachelyan/esp/tcp/build/bootloader/gdbinit/symbols
+source /Users/rachelyan/esp/tcp/build/bootloader/gdbinit/connect

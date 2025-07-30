@@ -1,0 +1,2 @@
+source /Users/rachelyan/esp/tcp/build/gdbinit/symbols
+source /Users/rachelyan/esp/tcp/build/gdbinit/connect
