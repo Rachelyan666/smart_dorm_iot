@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Device Control Panel</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .button {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px 30px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: #0056b3;
+    }
+
+    .info {
+      margin-top: 40px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Device Control</h1>
+
+  <form action="./lighton">
+    <input class="button" type="submit" value="Turn Light On" />
+  </form>
+
+  <form action="./lightoff">
+    <input class="button" type="submit" value="Turn Light Off" />
+  </form>
+
+  <form action="./close">
+    <input class="button" type="submit" value="Stop Server" />
+  </form>
+
+  <div class="info">
+    <p><strong>LED Status:</strong> {state}</p>
+    <p><strong>Temperature:</strong> {temperature}</p>
+  </div>
+
+</body>
+
+</html>
