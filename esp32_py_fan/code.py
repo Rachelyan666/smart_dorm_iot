@@ -13,11 +13,13 @@ PIR_PIN = board.IO1
 RELAY_PIN = board.IO2  
 SCL_PIN = board.IO9        
 SDA_PIN = board.IO8    
-MOTION_TIMEOUT = 3        # Seconds, how long to keep the relay on after motion
+MOTION_TIMEOUT = 300        # Seconds, how long to keep the relay on after motion
 USE_MQTT = True
 
 OUTLET_STATE_TOPIC = "foxyhamster/feeds/outlet-state"   
 OUTLET_COMMAND_TOPIC = "foxyhamster/feeds/outlet-set"
+TEMP_TOPIC = "foxyhamster/feeds/temp"   
+HUM_TOPIC = "foxyhamster/feeds/humid"
 # -----------------------------------------------
 
 # ---- Hardware setup ----
@@ -81,6 +83,8 @@ while True:
     temperature = sensor.temperature
     humidity = sensor.relative_humidity
     print(f"Temperature: {temperature:.1f} C, Humidity: {humidity:.1f}%")
+    mqtt_client.publish(TEMP_TOPIC, f"{temperature:.1f}")
+    mqtt_client.publish(HUM_TOPIC, f"{humidity:.1f}")
 
     if temperature > 28 and humidity > 80:
         if not relay.value:
@@ -105,4 +109,4 @@ while True:
 
     # Check for MQTT messages
     mqtt_client.loop()
-    time.sleep(2)
+    time.sleep(60)
